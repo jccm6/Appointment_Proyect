@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tu-nombre-de-servicio
+    name: Appointment_Proyect
     env: static
     buildCommand: npm run build
     staticPublishPath: ./dist
