@@ -16,5 +16,5 @@ export const AppDataSource = new DataSource ({
     "migrations": [],
     "subscribers": [],
     // Esto es importante para evitar errores de certificados no autorizados
-    // ssl: {rejectUnauthorized: false}
+    ssl: {rejectUnauthorized: false}
   },)
