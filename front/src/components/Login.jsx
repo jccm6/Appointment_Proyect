@@ -32,15 +32,8 @@ export function Login () {
             setMessage('<span class="text-danger">Por favor, complete todos los campos.</span>');
             return;
         }
-    
-        // try {
-        //     const response = await axios.post('http://localhost:3000/user/login', form);
-        //     setMessage('<span class="text-success">Inicio de sesión exitoso. Bienvenido/a ' + response.user.name + '</span>');
-        // } catch (error) {
-        //     setMessage('<span class="text-danger">Error al iniciar sesión: ' + (error.response.data || 'Error desconocido') + '</span>');
-        // }
-
-        axios.post('http://localhost:3000/user/login', form)
+        
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, form)
         .then(response => {
             dispatch(setUser(response.data));
             setMessage(`<span class="text-success">Inicio de sesión exitoso. Bienvenido/a ` + response.data.user.name + `</span> </br> Serás redirigido en 2 segundos a tus turnos`)

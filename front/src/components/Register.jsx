@@ -51,7 +51,7 @@ export function Register () {
             return;
         }
 
-        axios.post('http://localhost:3000/user/registrar', form)
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/registrar`, form)
         .then(response => {
             setMessage(`<span class="text-success">Registro exitoso. Bienvenido ` + response.data.name + `</span>`)
             setForm({

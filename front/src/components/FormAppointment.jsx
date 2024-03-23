@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { setUserAppointments } from '../redux/userAppointments';
+// import dotenv, { config } from "dotenv";
+// dotenv.config();
 
 export function FormAppointment () {
 
@@ -11,19 +13,6 @@ export function FormAppointment () {
     const dispatch = useDispatch();
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
-
-    // useEffect( () => {
-    //     if (!user) {
-    //         navigate("/login");
-    //     } else {
-            
-    //     }
-    // },[user])
-
-    // if (!user) {
-    //     navigate("/login");
-    // }
-
 
     const [turno, setTurno] = useState({
         date: '',
@@ -51,7 +40,7 @@ export function FormAppointment () {
             return;
         }
             
-        axios.post('http://localhost:3000/appointment/schedule', {
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/appointment/schedule`, {
             ...turno,
             userId: user.user.id
         })

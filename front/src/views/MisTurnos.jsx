@@ -17,7 +17,7 @@ export function MisTurnos () {
     if (!user) {
       navigate('/login');
     } else {
-      axios.get(`http://localhost:3000/user/${user.user?.id}`)
+      axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/${user.user?.id}`)
         .then(response => {
           dispatch(setUserAppointments(response.data));
         })
@@ -29,9 +29,9 @@ export function MisTurnos () {
 
   
   const handleCancelTurno = (id) => {
-    axios.put(`http://localhost:3000/appointment/cancel/${id}`)
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/appointment/cancel/${id}`)
     .then(() => {
-      axios.get(`http://localhost:3000/user/${user.user?.id}`)
+      axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/${user.user?.id}`)
       .then(response => {
         dispatch(setUserAppointments(response.data));
       })

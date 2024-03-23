@@ -10,7 +10,7 @@ export function TodosTurnos () {
     let [myTurns, setTurnos] = useState([])
 
     useEffect( () => {
-        axios.get('http://localhost:3000/appointment')
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/appointment`)
         .then(response => {
             setTurnos(response.data);
         })
@@ -23,9 +23,9 @@ export function TodosTurnos () {
     // console.log(setTurnos);
 
     const handleCancelTurno = (id) => {
-        axios.put(`http://localhost:3000/appointment/cancel/${id}`)
+        axios.put(`${import.meta.env.VITE_BACKEND_URL}/appointment/cancel/${id}`)
         .then(() => {
-          axios.get(`http://localhost:3000/appointment`)
+          axios.get(`${import.meta.env.VITE_BACKEND_URL}/appointment`)
           .then(response => {
             setTurnos(response.data);
           })

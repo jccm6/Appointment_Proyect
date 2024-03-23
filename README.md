@@ -8,6 +8,7 @@ Este proyecto es una aplicación para agendar citas. Permite a los usuarios inic
 - **Requisito de Edad:** Solo los usuarios mayores de edad pueden inscribirse en la plataforma, asegurando un uso responsable del servicio.
 - **Base de Datos:** Se implementó Postgres tanto para registrar usuarios como las citas.
 - **Peticiones:** Backend configurado con Endpoints para peticiones GET, POST y PUT.
+- **Node Version:** Versión de NodeJS: v20.10.0.
 
 Puedes acceder al proyecto mediante: https://appointment.jccm.dev/
 
@@ -50,7 +51,8 @@ Ahora deberías poder acceder a la aplicación en `http://localhost:3000`.
 ### Frontend
 1. Navega al directorio del frontend
 2. Instala las dependencias
-3. Inicia el servidor de desarrollo:
+3. Configura las variables de entorno creando un archivo `.env`. La variable de ser VITE_BACKEND_URL con la URI del backend
+4. Inicia el servidor de desarrollo:
 npm run dev
 
 Ahora deberías poder acceder a la aplicación en `http://localhost:5173`.
@@ -122,7 +124,8 @@ You should now be able to access the application at `http://localhost:3000`.
 ### Frontend
 1. Navigate to the frontend directory.
 2. Install the dependencies.
-3. Start the development server:
+3. Configure the environment variables by creating a `.env` file. Use VITE_BACKEND_URL as your new Backend URI.
+4. Start the development server:
 npm run dev
 
 You should now be able to access the application at `http://localhost:5173`.
